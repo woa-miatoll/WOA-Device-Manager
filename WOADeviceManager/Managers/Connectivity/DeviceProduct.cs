@@ -2,7 +2,6 @@
 {
     public enum DeviceProduct
     {
-        Epsilon,
-        Zeta
+        Miatoll
     }
 }

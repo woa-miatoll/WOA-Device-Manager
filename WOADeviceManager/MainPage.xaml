@@ -32,8 +32,8 @@
                             </Grid.ColumnDefinitions>
 
                             <Grid VerticalAlignment="Top" Grid.RowSpan="4" Margin="0,5">
-                                <Grid Height="16" Width="24" Background="{StaticResource AccentFillColorDefaultBrush}" Margin="0,2" />
-                                <Image Height="20" Source="/Assets/Devices/SurfaceDuo.png" />
+                                <Grid Height="38" Width="17" Background="{StaticResource AccentFillColorDefaultBrush}" Margin="0,2" />
+                                <Image Height="40" Source="/Assets/Devices/Miatoll.png" Margin="0,2" />
                             </Grid>
 
                             <TextBlock Margin="12,0,0,0" Grid.Column="1" Text="{x:Bind device.Name}" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Visibility="{x:Bind MainNavigationView.IsPaneOpen, Mode=OneWay}" />
@@ -49,8 +49,8 @@
                             </Grid.ColumnDefinitions>
                             
                             <Grid VerticalAlignment="Top" Grid.RowSpan="4" Margin="0,5">
-                                <Grid Height="16" Width="24" Background="Black" Margin="0,2" />
-                                <Image Height="20" Source="/Assets/Devices/SurfaceDuo.png" />
+                                <Grid Height="38" Width="17" Background="Black" Margin="0,2" />
+                                <Image Height="40" Source="/Assets/Devices/Miatoll.png" Margin="0,2" />
                             </Grid>
 
                             <TextBlock Margin="12,0,0,0" Grid.Column="1" Opacity="0.6" Text="No device connected" VerticalAlignment="Center" />
@@ -62,18 +62,18 @@
                     <NavigationViewItemHeader Content="Advanced" />
 
                     <NavigationViewItem Icon="Manage" Content="Partitions" Tag="partitions" IsEnabled="False" Visibility="Collapsed" />
-                    <NavigationViewItem Icon="Library" Content="DuoWOA Guides" Tag="guides" />
+                    <NavigationViewItem Icon="Library" Content="MiatollWOA Guides" Tag="guides" />
                     <NavigationViewItem Icon="Help" Content="About" Tag="about" />
                 </NavigationView.FooterMenuItems>
                 <NavigationView.MenuItems>
                     <NavigationViewItem Icon="CellPhone" Content="Info" Tag="status" IsSelected="True" />
                     <NavigationViewItem Icon="Refresh" Content="Manual mode" Tag="manualmode" />
                     <NavigationViewItemSeparator />
-                    <NavigationViewItem Icon="Document" Content="Unlock bootloader" Tag="unlockbootloader" />
-                    <NavigationViewItem Icon="ProtectedDocument" Content="Restore bootloader" Tag="restorebootloader" />
+                    <NavigationViewItem Icon="Document" Content="Unlock bootloader" Tag="unlockbootloader" IsEnabled="False" Visibility="Collapsed"/>
+                    <NavigationViewItem Icon="ProtectedDocument" Content="Restore bootloader" Tag="restorebootloader" IsEnabled="False" Visibility="Collapsed"/>
                     <NavigationViewItem Icon="Document" Content="Enable dual boot" Tag="enabledualboot" IsEnabled="False" Visibility="Collapsed" />
                     <NavigationViewItem Icon="ProtectedDocument" Content="Disable dual boot" Tag="disabledualboot" IsEnabled="False" Visibility="Collapsed" />
-                    <NavigationViewItemSeparator />
+                    <!-- <NavigationViewItemSeparator /> -->
                     <NavigationViewItem Icon="Save" Content="Backup" Tag="backupwindows" IsEnabled="False" Visibility="Collapsed" />
                     <NavigationViewItem Icon="Repair" Content="Flash" Tag="flashwindows" />
                     <NavigationViewItem Icon="PostUpdate" Content="Update" Tag="updatewindows" />
