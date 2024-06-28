@@ -15,19 +15,12 @@ namespace WOADeviceManager.Managers
     {
         public enum DownloadableComponent
         {
-            DRIVERS_EPSILON,
-            DRIVERS_ZETA,
-            FD_EPSILON,
-            FD_SECUREBOOT_DISABLED_EPSILON,
-            FD_SECUREBOOT_DISABLED_ZETA,
-            FD_ZETA,
+            DRIVERS_MIATOLL,
             PARTED,
-            TWRP_EPSILON,
-            TWRP_ZETA,
-            UEFI_EPSILON,
-            UEFI_SECUREBOOT_DISABLED_EPSILON,
-            UEFI_SECUREBOOT_DISABLED_ZETA,
-            UEFI_ZETA
+            TWRP_MIATOLL_FBEV1,
+            TWRP_MIATOLL_FBEV2,
+            UEFI_MIATOLL,
+            UEFI_SECUREBOOT_DISABLED_MIATOLL,
         }
 
         public static async Task<StorageFile> RetrieveFile(DownloadableComponent component, bool redownload = false)
@@ -43,64 +36,28 @@ namespace WOADeviceManager.Managers
                     fileName = "parted";
                     break;
 
-                case DownloadableComponent.TWRP_EPSILON:
-                    downloadPath = "https://github.com/WOA-Project/SurfaceDuo-Guides/raw/main/Files/surfaceduo1-twrp.img";
-                    fileName = "surfaceduo1-twrp.img";
+                case DownloadableComponent.TWRP_MIATOLL_FBEV1:
+                    downloadPath = "https://github.com/woa-miatoll/Port-Windows-11-Redmi-Note-9-Pro/releases/download/Recoveries/OrangeFox-Miatoll-Mod-FBEv1.img";
+                    fileName = "OrangeFox-Miatoll-Mod-FBEv1.img";
                     break;
-                case DownloadableComponent.UEFI_EPSILON:
+                case DownloadableComponent.TWRP_MIATOLL_FBEV2:
+                    downloadPath = "https://github.com/woa-miatoll/Port-Windows-11-Redmi-Note-9-Pro/releases/download/Recoveries/OrangeFox-Miatoll-Mod-FBEv2.img";
+                    fileName = "OrangeFox-Miatoll-Mod-FBEv2.img";
+                    break;
+                case DownloadableComponent.UEFI_MIATOLL:
                     releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Fast.Boot.zip";
-                    fileName = $"Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Fast.Boot.zip";
+                    downloadPath = $"https://github.com/woa-miatoll/Miatoll-Releases/releases/download/{releaseVersion}/Miatoll-UEFI-v{releaseVersion}.img";
+                    fileName = $"Miatoll-UEFI-v{releaseVersion}.img";
                     break;
-                case DownloadableComponent.UEFI_SECUREBOOT_DISABLED_EPSILON:
+                case DownloadableComponent.UEFI_SECUREBOOT_DISABLED_MIATOLL:
                     releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Secure.Boot.Disabled.Fast.Boot.zip";
-                    fileName = $"Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Secure.Boot.Disabled.Fast.Boot.zip";
+                    downloadPath = $"https://github.com/woa-miatoll/Miatoll-Releases/releases/download/{releaseVersion}/Miatoll-UEFI-v{releaseVersion}-Secure-Boot-Disabled.img";
+                    fileName = $"Miatoll-UEFI-v{releaseVersion}-Secure-Boot-Disabled.img";
                     break;
-                case DownloadableComponent.FD_EPSILON:
+                case DownloadableComponent.DRIVERS_MIATOLL:
                     releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    fileName = $"Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    break;
-                case DownloadableComponent.FD_SECUREBOOT_DISABLED_EPSILON:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Secure.Boot.Disabled.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    fileName = $"Surface.Duo.1st.Gen.UEFI-v{releaseVersion}.Secure.Boot.Disabled.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    break;
-                case DownloadableComponent.DRIVERS_EPSILON:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/SurfaceDuo-Drivers-v{releaseVersion}-Desktop-Epsilon.7z";
-                    fileName = $"SurfaceDuo-Drivers-v{releaseVersion}-Desktop-Epsilon.7z";
-                    break;
-
-                case DownloadableComponent.TWRP_ZETA:
-                    downloadPath = "https://github.com/WOA-Project/SurfaceDuo-Guides/raw/main/Files/surfaceduo2-twrp.img";
-                    fileName = "surfaceduo2-twrp.img";
-                    break;
-                case DownloadableComponent.UEFI_ZETA:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.2.UEFI-v{releaseVersion}.Fast.Boot.zip";
-                    fileName = $"Surface.Duo.2.UEFI-v{releaseVersion}.Fast.Boot.zip";
-                    break;
-                case DownloadableComponent.UEFI_SECUREBOOT_DISABLED_ZETA:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.2.UEFI-v{releaseVersion}.Secure.Boot.Disabled.Fast.Boot.zip";
-                    fileName = $"Surface.Duo.2.UEFI-v{releaseVersion}.Secure.Boot.Disabled.Fast.Boot.zip";
-                    break;
-                case DownloadableComponent.FD_ZETA:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.2.UEFI-v{releaseVersion}.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    fileName = $"Surface.Duo.2.UEFI-v{releaseVersion}.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    break;
-                case DownloadableComponent.FD_SECUREBOOT_DISABLED_ZETA:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/Surface.Duo.2.UEFI-v{releaseVersion}.Secure.Boot.Disabled.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    fileName = $"Surface.Duo.2.UEFI-v{releaseVersion}.Secure.Boot.Disabled.FD.for.making.your.own.Dual.Boot.Image.zip";
-                    break;
-                case DownloadableComponent.DRIVERS_ZETA:
-                    releaseVersion = await HttpsUtils.GetLatestBSPReleaseVersion();
-                    downloadPath = $"https://github.com/WOA-Project/SurfaceDuo-Releases/releases/download/{releaseVersion}/SurfaceDuo-Drivers-v{releaseVersion}-Desktop-Zeta.7z";
-                    fileName = $"SurfaceDuo-Drivers-v{releaseVersion}-Desktop-Zeta.7z";
+                    downloadPath = $"https://github.com/woa-miatoll/Miatoll-Releases/releases/download/{releaseVersion}/Miatoll-Drivers-v{releaseVersion}.zip";
+                    fileName = $"Miatoll-Drivers.zip";
                     break;
             }
             return await RetrieveFile(downloadPath, fileName, redownload);

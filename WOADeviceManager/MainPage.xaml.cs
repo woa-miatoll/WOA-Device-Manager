@@ -95,7 +95,7 @@ namespace WOADeviceManager
                         _ = MainNavigationFrame.Navigate(typeof(AboutPage), null, e.RecommendedNavigationTransitionInfo);
                         break;
                     case "guides":
-                        await Launcher.LaunchUriAsync(new Uri("https://github.com/WOA-Project/SurfaceDuo-Guides/blob/main/README.md"));
+                        await Launcher.LaunchUriAsync(new Uri("https://github.com/woa-miatoll/Port-Windows-11-Redmi-Note-9-Pro/blob/main/README.md"));
                         break;
                 }
             }
@@ -241,7 +241,7 @@ namespace WOADeviceManager
 
         private async void UpdateButton_Click(object sender, RoutedEventArgs e)
         {
-            await Launcher.LaunchUriAsync(new Uri("https://github.com/WOA-Project/WOA-Device-Manager/releases/latest"));
+            await Launcher.LaunchUriAsync(new Uri("https://github.com/woa-miatoll/WOA-Device-Manager/releases/latest"));
         }
     }
 }

@@ -17,7 +17,7 @@
                 <RichTextBlock>
                     <Paragraph>
                         <Run Text="When you flash an" />
-                        <Hyperlink NavigateUri="https://fullflash.pvabel.net/DuoWOA/">
+                        <Hyperlink NavigateUri="https://t.me/WoaMiatollFFU">
                             <Run Text="FFU" />
                         </Hyperlink>
                             <Run Text=", the phone will be restored to its original configuration. All unlocks, apps and data will be removed from the phone!"/>

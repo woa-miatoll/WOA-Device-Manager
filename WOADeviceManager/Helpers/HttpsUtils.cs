@@ -9,12 +9,12 @@ namespace WOADeviceManager.Helpers
     {
         public static async Task<string> GetLatestBSPReleaseVersion()
         {
-            return await GetLatestGithubReleaseVersion("https://github.com/WOA-Project/SurfaceDuo-Releases");
+            return await GetLatestGithubReleaseVersion("https://github.com/woa-miatoll/Miatoll-Releases");
         }
 
         public static async Task<string> GetLatestWOADeviceManagerVersion()
         {
-            return await GetLatestGithubReleaseVersion("https://github.com/WOA-Project/WOA-Device-Manager");
+            return await GetLatestGithubReleaseVersion("https://github.com/woa-miatoll/WOA-Device-Manager");
         }
 
         private static async Task<string> GetLatestGithubReleaseVersion(string repository)
